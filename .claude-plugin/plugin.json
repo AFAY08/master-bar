@@ -1,0 +1,1 @@
+{ "name": "master-bar", "version": "0.1.0", "description": "A bar above the prompt in the Claude Desktop app: 5-hour and 7-day usage rings, plus a Master prompt button that rewrites your draft into a stronger prompt.", "types": "./types/index.d.ts" }
