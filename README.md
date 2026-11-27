@@ -22,4 +22,13 @@ Answer `y` to add the marketplace, then pick the user scope. Installed at the us
 
 In the Desktop app, where `/plugin` does not run: click + next to the prompt box, then Plugins, Add marketplace with `AFAY08/master-bar`, then Add plugin.
 
-This repository is private: installing needs a git credential for github.com on your machine (an SSH key, or `gh auth login` then `gh auth setup-git`).
+### Cloud sessions
+
+A cloud session starts in a fresh container, so a plugin installed on your computer does not reach it. Add these lines to your cloud environment's setup script to install it in every new cloud session:
+
+```
+if command -v claude >/dev/null 2>&1; then
+  claude plugin marketplace add AFAY08/master-bar || true
+  claude plugin install master-bar@master-bar --scope user || true
+fi
+```
